@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">Yangi o'quvchi</h1>
+
+  <div class="col-md-11 bg-white mx-auto shadow rounded">
+    <form class="settings-form pb-3 mb-4">
+      <div class="d-flex justify-content-between">
+        <div class="form-group pb-2 pt-4 px-3" w=32>
+          <label for="surname">Familiya</label>
+          <input type="text" class="form-control" maxlength="30" id="surname" required placeholder="Familiyani kiriting">
+        </div>
+        <div class="form-group pb-2 pt-4 px-3" w=32>
+          <label for="full-name">Ism</label>
+          <input type="text" class="form-control" maxlength="30" id="full-name" required placeholder="Ismni kiriting">
+        </div>
+        <div class="form-group pb-2 pt-4 px-3" w=32>
+          <label for="patronymic">Otasi ismi</label>
+          <input type="text" class="form-control" maxlength="30" id="patronymic" required placeholder="Otasi ismni kiriting">
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="form-group pb-2 pt-2 px-3" w=32>
+          <label for="address-region">Hudud</label>
+          <select class="form-control region-select" id="address-region"></select>
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=32>
+          <label for="address-district">Tuman / shahar</label>
+          <input type="text" class="form-control" id="address-district" required placeholder="Tuman yoki shaharni kiriting">
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=32>
+          <label for="address-exact-adress">Manzil</label>
+          <input type="text" class="form-control" id="address-exact-adress" required placeholder="MFY, mahalla, kvartal, nomer">
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="form-group pb-2 pt-2 px-3" w=32>
+          <label for="subgroup">Kichik guruh</label>
+          <select class="form-control" id="subgroup">
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=32>
+          <label for="phone-number">Telefon nomer</label>
+          <input type="tel" minlength="13" maxlength="13" class="form-control" id="phone-number" required placeholder="Telefon nomerni kiriting">
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=32>
+          <label for="date-of-birth">Tugilgan sana</label>
+          <input type="date" class="form-control shadow-sm" required id="date-of-birth">
+        </div>
+      </div>
+      <div class="d-flex shadow-bottom mb-3 justify-content-between">
+        <div class="form-group pb-2 pt-2 px-3" w=48>
+          <label for="name">Login</label>
+          <input type="text" class="form-control" maxlength="30" id="name" required placeholder="Loginni kiriting">
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=48>
+          <label for="password">Parol</label>
+          <input type="password" class="form-control" minlength="6" id="password" required autocomplete="new-password" placeholder="Parolni kiriting">
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="form-group pb-2 pt-2 px-3" w=25>
+          <label for="father-surname">Otasi familyasi</label>
+          <input type="text" class="form-control" maxlength="30" id="father-surname" required placeholder="Otasining familyasini kiriting">
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=25>
+          <label for="father-name">Otasi ismi</label>
+          <input type="text" class="form-control" maxlength="30" id="father-name" required placeholder="Otasining ismini kiriting">
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=25>
+          <label for="father-workplace">Otasi ish joyi</label>
+          <input type="text" class="form-control" maxlength="30" id="father-workplace" required placeholder="Otasining ish joyini kiriting">
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=25>
+          <label for="father-phone-number">Otasi telefon raqami</label>
+          <input type="tel" minlength="13" maxlength="13" class="form-control" id="father-phone-number" required placeholder="Otasining telefon raqamini kiriting">
+        </div>
+      </div>
+      <div class="d-flex shadow-bottom mb-4 justify-content-between">
+        <div class="form-group pb-2 pt-2 px-3" w=25>
+          <label for="mother-surname">Onasi familyasi</label>
+          <input type="text" class="form-control" maxlength="30" id="mother-surname" required placeholder="Onasining familyasini kiriting">
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=25>
+          <label for="mother-name">Onasi ismi</label>
+          <input type="text" class="form-control" maxlength="30" id="mother-name" required placeholder="Onasining ismini kiriting">
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=25>
+          <label for="mother-workplace">Onasi ish joyi</label>
+          <input type="text" class="form-control" maxlength="30" id="mother-workplace" required placeholder="Onasining ish joyini kiriting">
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=25>
+          <label for="mother-phone-number">Onasi telefon raqami</label>
+          <input type="text" class="form-control" maxlength="30" id="mother-phone-number" required placeholder="Onasining telefon raqamini kiriting">
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="form-group pb-2 pt-2 px-3" w=32>
+          <label for="where-lives">Hozir qayerda yashamoqda</label>
+          <select class="form-control" id="where-lives" onchange="whereChanged($(this))">
+            <option value="Oʻz uyida">Oʻz uyida</option>
+            <option value="Yotoqxona">Yotoqxona</option>
+            <option value="Ijarada">Ijarada</option>
+          </select>
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=32>
+          <label for="identity-series">Shaxs bildiruvchi hujjat seriyasi</label>
+          <input type="text" class="form-control" id="identity-series" required placeholder="Seriya raqamini kiriting">
+        </div>
+        <div class="form-group pb-2 pt-2 px-3" w=32>
+          <label for="identity-numbers">Hujjat raqami</label>
+          <input type="text" class="form-control" id="identity-numbers" required placeholder="Hujjat raqamini kiriting">
+        </div>
+      </div>
+      <div class="d-flex justify-content-between pt-4 px-2">
+        <div class="rounded shadow pt-3 rent-container d-none" w=48 style="background: #CAE4FF">
+          <div class="form-group pb-1 pt-2 px-3">
+            <label for="current-address-region">Ijara hududi</label>
+            <select class="form-control region-select" id="current-address-region">
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+          <div class="form-group pb-1 pt-1 px-3">
+            <label for="current-address-district">Ijara tuman / shahar</label>
+            <input type="text" class="form-control" id="current-address-district" required placeholder="Tuman yoki shaharni kiriting">
+          </div>
+          <div class="form-group pb-2 pt-1 px-3">
+            <label for="current-exact-adress">Ijara manzil</label>
+            <input type="text" class="form-control" id="current-exact-adress" required placeholder="MFY, mahalla, kvartal, nomer">
+          </div>
+        </div>
+        <div class="rounded shadow pt-3" w=48 style="background: #FFEDED">
+          <p class="value text-center mb-2">Chet tillari</p>
+          <div class="languages px-3">
+          </div>
+          <div class="text-center my-3">
+            <button class="btn btn-secondary pt-1 outline-none" type="button" onclick="addLesson($(this))">
+              <svg class="bi" width="25" height="25" fill="currentColor">
+                <use xlink:href="/assets/icons/bootstrap-icons.svg#plus-circle"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="text-danger my-2 mt-5 text-center font-weight-bold validation-error"></p>
+      <div class="text-center"><button class="btn btn-primary" type="submit">Yangi o'quvchi +</button></div>
+    </form>
+  </div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

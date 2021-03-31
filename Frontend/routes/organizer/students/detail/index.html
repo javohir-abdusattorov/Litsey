@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">O'quvchi <span class="text-primary" style="cursor: pointer"></span></h1>
+
+  <div class="col-md-11 mx-auto bg-white rounded shadow p-3 mb-5 student">
+    <div class="text-center pb-4">
+    <img src="/assets/image/default_user_image.png" class="rounded-circle shadow user-image" width=100 height=100>
+    </div>
+    <div class="tr mb-2 px-2 pt-3 justify-content-between">
+      <div class="tr" w=40>
+        <div>
+          <div class="th mb-2">Ismi</div>
+          <div class="th mb-2">Familyasi</div>
+          <div class="th mb-2">Otasi ismi</div>
+          <div class="th mb-2">Tug'ilgan sanasi</div>
+          <div class="th mb-2">Telefon raqami</div>
+          <div class="th mb-2">Login</div>
+          <div class="th mb-2">Guruh</div>
+          <div class="th mb-2">Kurs</div>
+          <div class="th mb-2">Yo'nalish</div>
+          <div class="th mb-2">Ta'lim tili</div>
+          <div class="th mb-2">Hozirda</div>
+          <div class="th mb-2">Hudud</div>
+          <div class="th mb-2">Tuman / shahar</div>
+          <div class="th mb-2">Aniq manzil</div>
+        </div>
+        <div style="flex-grow: 1">
+          <div class="td mb-2" id="fullName">Javohir</div>
+          <div class="td mb-2" id="surname">Abdusattorov</div>
+          <div class="td mb-2" id="patronymic">Botir</div>
+          <div class="td mb-2" id="dateOfBirth">22.66.7777</div>
+          <div class="td mb-2" id="phoneNumber">+998998989898</div>
+          <div class="td mb-2" id="name">1guruh_mirolim</div>
+          <div class="td mb-2" id="group">GROUP NO1</div>
+          <div class="td mb-2" id="course">1-kurs</div>
+          <div class="td mb-2" id="faculty">Ijtimoiy fanlar</div>
+          <div class="td mb-2" id="educationLang">Rus</div>
+          <div class="td mb-2" id="status"><span class="text-success">Aktiv</span></div>
+          <div class="td mb-2" id="region">Toshkent sh.</div>
+          <div class="td mb-2" id="district">Shahriston</div>
+          <div class="td mb-2" id="exactAdress">48-mahalla</div>
+        </div>
+      </div>
+      <div w=56>
+        <div class="tr mb-2 flex-nowrap">
+          <div class="th">Guvohnoma/Pasport/ID karta seriyasi</div>
+          <div class="td" id="identitySeries">134569876543567890098765</div>
+        </div>
+        <div class="tr mb-2 flex-nowrap">
+          <div class="th">Guvohnoma/Pasport/ID karta raqami</div>
+          <div class="td" id="identityNumbers">134569876543567890098765</div>
+        </div>
+        <div class="tr">
+          <div>
+            <div class="th mb-2">Hozirda qayerda yashayapti</div>
+            <div class="if-lives-rent mb-4 pl-3 border-left">
+              <div class="th mb-2">Hudud</div>
+              <div class="th mb-2">Tuman / shahar</div>
+              <div class="th mb-2">Aniq manzil</div>
+            </div>
+            <div class="th mb-2">Otasi ismi</div>
+            <div class="th mb-2">Otasi familyasi</div>
+            <div class="th mb-2">Otasi ish joyi</div>
+            <div class="th mb-2">Otasi telefon raqami</div>
+            <div class="th mb-2">Onasi ismi</div>
+            <div class="th mb-2">Onasi familyasi</div>
+            <div class="th mb-2">Onasi ish joyi</div>
+            <div class="th mb-2">Onasi telefon raqami</div>
+          </div>
+          <div style="flex-grow: 1">
+            <div class="td mb-2" id="whereLives">O'z uyida</div>
+            <div class="if-lives-rent mb-4">
+              <div class="td mb-2" id="currentAddress-region">Toshkent sh.</div>
+              <div class="td mb-2" id="currentAddress-district">Shahriston</div>
+              <div class="td mb-2" id="currentAddress-exactAdress">48-mahalla</div>
+            </div>
+            <div class="td mb-2" id="father-name">Botir</div>
+            <div class="td mb-2" id="father-surname">Kabulov</div>
+            <div class="td mb-2" id="father-workplace">Nomalum</div>
+            <div class="td mb-2" id="father-phoneNumber">+9998787878</div>
+            <div class="td mb-2" id="mother-name">Botira</div>
+            <div class="td mb-2" id="mother-surname">Kabulova</div>
+            <div class="td mb-2" id="mother-workplace">Nomaluma</div>
+            <div class="td mb-2" id="mother-phoneNumber">+9998787878</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

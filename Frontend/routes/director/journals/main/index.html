@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">Jurnallar</h1>
+
+  <div class="text-right pr-5 pb-4">
+    <a href="create" class="btn btn-outline-success" data-toggle="modal" data-target="#create-session-modal">Semestr boshlash</a>
+  </div>
+
+  <div class="filters-container col-md-12 pr-4 pl-3 mx-auto mb-5">
+    <form class="filter-form">
+      <div class="d-flex align-items-end">
+        <div class="form-group mb-0 px-3" w=16>
+          <label for="filter-groups">Guruh</label>
+          <select class="form-control text-dark px-3 mr-3" id="filter-groups">
+          </select>
+        </div>
+        <div class="form-group mb-0 px-3" w=14>
+          <label for="filter-course">Kurs</label>
+          <select class="form-control text-dark px-3 mr-3" id="filter-course">
+            <option value="all">Hammasi</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+        <div class="form-group mb-0 px-3" w=14>
+          <label for="filter-subgroup">Kichik guruh</label>
+          <select class="form-control text-dark px-3" id="filter-subgroup">
+            <option value="all">Hammasi</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+        <input type="search" class="form-control px-3 ml-auto text-dark" id="student-search" maxlength="30" placeholder="O'quvchi ismini kiriting" w=25>
+        <button class="btn btn-primary ml-3" type="submit">Filter</button>
+      </div>
+    </form>
+  </div>
+
+	<ul class="list-group px-4 pb-4 students-container">
+	</ul>
+
+  <div class="modal loading-modal" data-backdrop="static" role="dialog">
+    <div class="modal-dialog m-0 w-100 h-100" style="max-width: 100% !important">
+      <div class="modal-content border-0 w-100 h-100 d-flex justify-content-center align-items-center" style="background: rgba(0, 0, 0, 0.3)">
+        <div id="loader"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="create-session-modal" role="dialog" aria-labelledby="create-session-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="create-session-modal-label">Yangi semestr</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form class="create-session-form">
+          <div class="modal-body">
+            <div class="form-group col-md-10 d-flex">
+              <label for="create-session-course" class="col-sm-3 col-form-label px-0">Kurs:</label>
+              <div class="col-sm-9 px-0">
+                <select class="form-control" id="create-session-course">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-10 d-flex">
+              <label for="create-session-weeknum" class="col-sm-4 col-form-label px-0">Haftalar soni:</label>
+              <div class="col-sm-8 px-0">
+                <input type="number" class="form-control" id="create-session-weeknum" required value="18"
+                  data-toggle="tooltip"
+                  data-placement="right"
+                  data-boundary="window"
+                  title="Semestrda nechta hafta bo'lishini kiriting">
+              </div>
+            </div>
+          </div>
+          <p class="text-danger my-2 text-center font-weight-bold validation-error"></p>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="submit">Semestr boshlash</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

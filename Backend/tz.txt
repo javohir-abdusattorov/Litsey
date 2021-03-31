@@ -1,0 +1,603 @@
+Javohir-Abdusattorov
+javohirabdusattorov2005@gmail.com
+javohirabdusattorov
+
+Ishlar:
+    === === === === === === === === === === === === === === === === === === === === === === ===
+
+    User uchun ham name ham username berish kerak
+    |<-- Databasedagi ortiqcha namelarni ochirish -->|
+
+    Create teacher tomonidan boladi --> session tugagan bolsa return;
+    Create bolayotganda: media, description, homeworkDesc, homeworkType
+
+    HW create bolayotganda: media, description --> file type validation
+    Teacher tekshirganda: isPassed, !isPassed ? message
+    !isPassed --> ??? media.delete(), desc.delete(), -->
+
+    !IDEA! Student !isPassed --> editni orniga yangidan homework add qilish.
+                                 shunaqa qilinadi --> x <--
+
+    !!! Userlar uchun notifications route qilish kerak, buning uchun alohida user app create,
+    Hozircha ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Front routing:
+
+/ --> hamma shu pagega kiradi, keyin redirect boladi
+
+    /login --> login page
+    /director --> directorni main page korinishi
+        /journals --> director uchun jurallar
+        /groups   --> hamma gruppa, ularni edit, create, disable
+        /users    --> hamma userlar, ularni disable
+        /subjects --> subjects crud
+    /sub-admin --> sub-admin page
+    /group-leader         --> kurator adminka
+        /students         --> ozini oquvchilari
+        /journals         --> direktorda koringanday jurnallar korinishi
+        /attendance       --> davomat
+        /lessons-schedule --> dars jadvali
+        /???              --> oquvchilarni ozlashtirishini qilaman agar vaqt qolsa
+
+    /student         --> o'quvchi page
+        /            --> bugungi dars jadvali, o'tilgan lessonlar, qaysilarini qilib tugatgan! Olgan bahosi, bunda attendanceni ham hisobga olish kerak
+        /journal     --> ozini jurnali
+        /attendance  --> ozini bir haftalik, bugunlik davomatini korinish
+        /lessons     --> darslar, uy ishilar
+
+        <-- Shularni hammasida yakshanbani hisobga olish -->
+
+    /teacher         --> fan ustoz page
+        /groups      --> o'zi dars o'tadigan gruppalar list, filter,
+          /group/:id --> bitta gruppani teacher fanidan jurnali, bu asosiy qism, bu page'da baho qoyish ham bolaveradi
+        /lessons     --> darslar page, bu pageda bugungi & joriy haftada otilgan darslar ro'yxati turadi. { gruppa, subgroup, lessonIndex, homeworks[], averageHWScore }
+          /create    --> yangi dars o'tish
+          /edit/:lessonID  --> o'tilgan darsni { media, desc, hwDesc, fileType } larni edit qilish
+          /lesson/:id  --> o'tilgan dars haqida to'liq ma'lumot
+          /homework/:id --> vazifani tekshirish, baho qo'ysa jurnalga bahoni qadab tashlash
+
+----------------------------------------------------------------------------
+
+IDEAS: [
+    "Main pagega birbalolar qigandan keyin kirish degan button bosganda agar auth bolsa ozini pagega bolmasa loginga yuborish kerak!",
+    "Keyinchalik eng yaxshi ozlashtiruvchilar statistikasini chiqarish",
+
+    "Sayt yoki programma for convert date -> <-"
+]
+
+Work: [
+    "Lessson uy ishi topshirishga keyingi darsgacha vaqt berish, vaqt: 72soat"
+    "Semestrni 2course lik qilish, yani har bir kurs uchun alohida GDRIVE PAPKA ochiladi va uy ishilar shunga tashlanadi"
+    "Lesson,
+      birinchi /lesson pageni qilamiz, hafta kunlaridagi lessonlarni chiqarib qoyish kerak status bilan
+      statuslarga qarab /lesson/post-hw/:id ga oxshgan routelarda forma yasaladi & validation va backendga ulanadi
+      shularni hammasi deyarli 70% bolib qoladi, keyin notification route va boshqalarni togirlaymiz
+      Student ozini tashlagan homeworkni check bolmasdan, 3kun ichida media bilan descriptionni togrilash imkoniyatiga ega bolishi kerak"
+    "attendance craete ui minimize, sidebar profile_image shadow"
+    "Dars uchun page! Va vaqti tugagan darslarni shu yerga redirect qilinishi kerak"
+
+    "GDrive file name berish kerak"
+    "Lesson edit qilinganda faqat description edit bo'ladi"
+
+    "shoppersni danngillatib tashlash"
+    "bitta ustoz bir necha fanga dars otish",
+
+    "spotifyga hamma musiclarni solish --> !nneww! --> JFLA, KAI"
+
+
+
+
+    "Dars topshirish, qayta topshirish tizimi to'liq ishlayapti. FULL TEST"
+    "Notification"
+    "Attendance"
+    "attendance craete ui minimize, sidebar profile_image shadow"
+
+    "configni rebranding",
+    "har bir uy ishini, mediani ozini pakasiga otish kerak",
+    "lesson create faqat config.course.started bolganini get qilish"
+    "course'ga semestr boshlanganini config orqali tekshirish"
+    "oquvchi qaytadan uy ishi post qilganda esikisini mediasi delete bo'lib ketishi kerak"
+    "lesson create ui'dagi hwtypes dynamic bolishi kerak"
+
+    "score edit qilganda hammasini list qilib yuboriladi, u yerda esa hammasi avval o'zgartirilib agar xato chiqmasa keyin .save() qilinadi"
+
+    ----------------------------------------------------------------------------
+
+    [*] "kop GET li routelarni yana bir subroutega solish, pookuratniyee"
+    [*] "file types += ".zip" "
+
+    [] "T E A C H E R"
+    [] "O'tilgan dars qaytadan o'tilmaydi, ya'ni get/create da o'tilganlarni qabul qilmaydi1"
+    [] "Swap lessons && dizayn problems"
+    [] " /litsey/teacher/lessons/ da o'rtacha baho "
+    [] "Auto login"
+    [] "Group detail page"
+    [] "Organizer page'ga va undan oldin qilinganlarga yangi qilingan statistics va logikalarni ko'chirish"
+    [] "Listlarga iloji boricha filter qo'shish."
+    [] "I18N"
+]
+
+
+----------------------------------------------------------------------------
+
+<svg class="bi" width="50" height="50" fill="currentColor">
+  <use xlink:href="/assets/icons/bootstrap-icons.svg#shop"/>
+</svg>
+
+https://q127qce7d9dev6c77ix2.herokuapp.com
+
+name: Litsey Direktor, parol: 1234567
+name: Litsey Zauch-1, parol: 1234567
+name: Litsey Zauch-2, parol: 1234567
+
+
+----------------------------------------------------------------------------
+
+// currentlar uchun: #B1EDB1
+// intermet uchun: #EDCCD1
+// last uchun: #EDE9AE
+// session uchun: #9AEDED
+
+----------------------------------------------------------------------------
+
+Chill: [
+    "AETop musican Twice vids ni korish",
+    "/vid" ni GDrive ga upload qilish,
+    "Gitfolio"
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Uy ishilarni boshlash
+    GAPI da papka create qilishni organish
+    Har bir semestr uy ishilarni bir GDRIVE papkaga solib qoyish
+    Bir semestr lesson'larni delete qilish ( Super-admin only )
+
+    === === === === === === === === === === === === === === === === === === === === === === ===
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+User delete:
+    Oquvchini       -->
+    Ustozni         -->     session tugaganda
+    Group-leaderni  -->
+
+    Sub-adminni     -->     lyuboy paytda
+
+Davomat:
+    Manaviyat hodimi tomonidan qilinadi
+    Page: _____ -> grouplar, ______ -> group.students
+    On.submit --> group.students[i].jurnal.subjects[i].session[i].lyuboy.davomat: { davomat: false, isSababli: true }
+    Ustoz get qilganda disabled bolishi <={-|__|-}=>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Activation:
+    User:
+        Default: {active}
+        Teacher, sub-admin -->   [disactive] admin tomonidan
+        Student, group-leader --> group [disactive] bolganda [disactive]
+
+    Group yaratilganida {active}
+        Admin tomonidan [disactive]
+    Jurnal yaratilganida {active}
+        Student.group [disactive] bolganda jurnal [disactive]
+    Session yaratilganida {active}
+        Oxirgi calculationdan keyin [disactive]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Litsey project:
+
+Userlar: superadmin ( litsey rahbari ), subadmin ( zauchlar ), o'qituvchi, o'quvchi
+
+Hammasi uchun:
+    login page
+
+Superadmin ( listey rahbari, direktor ):
+    subadmin'larni registratsiya qilish,
+    oqituvchilarni registratsiya qilish,
+    Hamma otilgan darslarni korish
+    Dars jadvalini korish
+
+Subadmin ( zauchlar ):
+    Oqituvchilarni registratsiya qilish
+    Dars jadvalini tuzish
+    Boshqa yordamchi ishlar
+
+Oqituvchilar:
+    Ozi kiradigan sinflarni jadvalini, jurnalini korish
+    Aynan bitta sinfga ozini fanidan dars otish. Dars: (text, rasm, video, pdf, power point ...), uy ishi qanday bolishini belgilash (text, rasm, video, pdf, power point ...)
+    Oquvchilar darsga jonatgan uy ishilarni qabul qilish, jurnalga baho qoyish
+
+Oquvchilar:
+    Bugungi darslarni korish
+    Darslarni yuborish, yoki yuborganlarni edit qilish ( 1hafta ichida )
+    Ozini sinfini jurnailini korish, dars jadvalini korish
+
+Hech narsa public bolmaydi ( login page'dan tashqari )
+
+Oqituvchi uy vazifani tekshirganda 2ta button:
+    1. Qabul qilaman && Baho qoyish boladi
+    2. Qabul qilmayman && Message bolmaydi
+
+ -- Hozir journal yaratilyapti faqat static
+
+
+
+
+
+
+while (true) {
+  if (inCurrent) {
+    const lastCurrent = currents[0]
+    let currentData = []
+
+    for (const lesson of lastCurrent) {
+      if (lesson.date <= date) {
+        currentData.push(lesson)
+        const index = userAttendance.findIndex(item => dateService.areSameDay(item.date, lesson.date))
+        if (index >= 0) {
+          if (userAttendance[index].hasReason) attendanceData.hasReason += 1
+          else attendanceData.noReason += 1
+        }
+      }
+      else break
+    }
+    if (!currentData.length) break
+    data.push({ type: "current", data: currentData })
+    currents.splice(0, 1)
+    inCurrent = false
+    if (intermediates.length) inIntermeditate = true
+    else inLast = true
+  } else if (inIntermeditate) {
+    let lastIntermeditate = intermediates[0]
+    if (lastIntermeditate.date <= date) data.push({ type: "intermeditate", data: lastIntermeditate })
+    else break
+
+    const index = userAttendance.findIndex(item => dateService.areSameDay(item.date, lastIntermeditate.date))
+    if (index >= 0) {
+      if (userAttendance[index].hasReason) attendanceData.hasReason += 1
+      else attendanceData.noReason += 1
+    }
+
+    intermediates.splice(0, 1)
+    inIntermeditate = false
+    if (currents.length) inCurrent = true
+    else inLast = true
+  } else if (inLast) {
+    if (session.lastScore.date <= date) {
+      data.push({
+        type: "last",
+        data: session.lastScore
+      })
+      data.push({
+        type: "session",
+        data: session.sessionScore ? session.sessionScore : null
+      })
+
+      const index = userAttendance.findIndex(item => dateService.areSameDay(item.date, session.lastScore.date))
+      if (index >= 0) {
+        if (userAttendance[index].hasReason) attendanceData.hasReason += 1
+        else attendanceData.noReason += 1
+      }
+    }
+    break
+  }
+}
+
+16.02 => 16.03
+
+
+{
+  "_id": "5ffe972f0c01a50aa897dbeb",
+  "name": "Milliy goya",
+  "subject": "5fd9e078a779a01a8493d456",
+  "inWeek": 2,
+  "sessions": [
+    {
+      "lastScore": {
+        "scoreID": "668f8b4b92fba0ce08c",
+        "date": "2021-05-31T19:00:00.000Z"
+      },
+      "intermediate": {
+        "averageScore": 0,
+        "scores": [
+          {
+            "_id": "6015cb756ac0a10fb8761587",
+            "scoreID": "0-abfc865639a58bf2fc230",
+            "date": "2021-02-07T19:00:00.000Z"
+          },
+          {
+            "_id": "6015cb756ac0a10fb8761588",
+            "scoreID": "0-fcedbbb513f2165098361",
+            "date": "2021-03-15T19:00:00.000Z"
+          },
+          {
+            "_id": "6015cb756ac0a10fb8761589",
+            "scoreID": "0-22580ed6c9f14b0e14082",
+            "date": "2021-04-11T19:00:00.000Z"
+          },
+          {
+            "_id": "6015cb756ac0a10fb876158a",
+            "scoreID": "0-f93789bfd60e1b91ed863",
+            "date": "2021-05-03T19:00:00.000Z"
+          },
+          {
+            "_id": "6015cb756ac0a10fb876158b",
+            "scoreID": "0-f7c8a2cf01cdb5db40a44",
+            "date": "2021-05-30T19:00:00.000Z"
+          }
+        ]
+      },
+      "current": {
+        "averageScore": 4,
+        "currents": [
+          [
+            {
+              "_id": "6015cb756ac0a10fb876158c",
+              "scoreID": "0-f7b80156328768f684ee0",
+              "date": "2021-01-31T19:00:00.000Z",
+              "score": 4
+            },
+            {
+              "_id": "6015cb756ac0a10fb876158d",
+              "scoreID": "0-42268d01a41c19b0e9ac1",
+              "date": "2021-02-01T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb876158e",
+              "scoreID": "0-29ee635c1db5c4c7f87f2",
+              "date": "2021-02-07T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb876158f",
+              "scoreID": "0-759f9c82738d1b4aaa703",
+              "date": "2021-02-08T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb8761590",
+              "scoreID": "0-2681a9db81d173aec2664",
+              "date": "2021-02-14T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb8761591",
+              "scoreID": "0-07f4d89fea5d679023b35",
+              "date": "2021-02-15T19:00:00.000Z"
+            }
+          ],
+          [
+            {
+              "_id": "6015cb756ac0a10fb8761592",
+              "scoreID": "1-4f6f5643e54f8766de4a0",
+              "date": "2021-02-22T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb8761593",
+              "scoreID": "1-821c047bab08c2ce6ea71",
+              "date": "2021-02-28T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb8761594",
+              "scoreID": "1-cf4c701cd44a42c4dbfa2",
+              "date": "2021-03-01T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb8761595",
+              "scoreID": "1-e280e321babc99228eba3",
+              "date": "2021-03-07T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb8761596",
+              "scoreID": "1-eeba2c298dfd5bd779674",
+              "date": "2021-03-08T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb8761597",
+              "scoreID": "1-254603c4f2a8ec738dc15",
+              "date": "2021-03-14T19:00:00.000Z"
+            }
+          ],
+          [
+            {
+              "_id": "6015cb756ac0a10fb8761598",
+              "scoreID": "2-11df55b48cb2be1343fe0",
+              "date": "2021-03-21T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb8761599",
+              "scoreID": "2-45ccca7971f5ff7d2b2c1",
+              "date": "2021-03-22T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb876159a",
+              "scoreID": "2-ae142f4101ff0f5053b92",
+              "date": "2021-03-28T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb876159b",
+              "scoreID": "2-b909f7131f8e8810744b3",
+              "date": "2021-03-29T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb876159c",
+              "scoreID": "2-cf079893ade2a2eb35904",
+              "date": "2021-04-04T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb876159d",
+              "scoreID": "2-dccb4a60ac832bdd514d5",
+              "date": "2021-04-05T19:00:00.000Z"
+            }
+          ],
+          [
+            {
+              "_id": "6015cb756ac0a10fb876159e",
+              "scoreID": "3-4ae2b9d06b8cfa28b3400",
+              "date": "2021-04-12T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb876159f",
+              "scoreID": "3-990dafc9d403328ee8fb1",
+              "date": "2021-04-18T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb87615a0",
+              "scoreID": "3-dfc94ce2acb787c4fe702",
+              "date": "2021-04-19T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb87615a1",
+              "scoreID": "3-2ea0e562d4579c9841e43",
+              "date": "2021-04-25T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb87615a2",
+              "scoreID": "3-014acc4b6ec049a3d0884",
+              "date": "2021-04-26T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb87615a3",
+              "scoreID": "3-4568a388fe7ba286bf205",
+              "date": "2021-05-02T19:00:00.000Z"
+            }
+          ],
+          [
+            {
+              "_id": "6015cb756ac0a10fb87615a4",
+              "scoreID": "4-cf2b5b6234530aa6f8050",
+              "date": "2021-05-09T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb87615a5",
+              "scoreID": "4-ff000f71b9bcd35451b51",
+              "date": "2021-05-10T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb87615a6",
+              "scoreID": "4-edd087ecc3e9db6d19812",
+              "date": "2021-05-16T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb87615a7",
+              "scoreID": "4-72bc531d3efaad075f393",
+              "date": "2021-05-17T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb87615a8",
+              "scoreID": "4-2f50d0953f909f765bd04",
+              "date": "2021-05-23T19:00:00.000Z"
+            },
+            {
+              "_id": "6015cb756ac0a10fb87615a9",
+              "scoreID": "4-07c293d659ce90511f275",
+              "date": "2021-05-24T19:00:00.000Z"
+            }
+          ]
+        ]
+      },
+      "_id": "6015cb756ac0a10fb8761586",
+      "sessionID": "2bddddfceaa274389bca2",
+      "startedAt": "2021-01-30T19:00:00.000Z"
+    }
+  ]
+},

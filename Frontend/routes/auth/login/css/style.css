@@ -1,0 +1,21 @@
+
+body {
+	background: #F4F4F4;
+	font-family: 'Open Sans', sans-serif;
+}
+input {
+	background: #F6F6F6 !important;
+}
+.header-text {
+	font-family: 'Kufam', cursive;
+}
+.fw600 {
+	font-weight: 600;
+}
+.submit-btn {
+	background: #93C951;
+	letter-spacing: 1px;
+}
+.card-header {
+	background: #00B2E2;
+}

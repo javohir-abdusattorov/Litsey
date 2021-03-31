@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-quill/quill.min.css">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">Dars <span class="text-primary" style="cursor: pointer"></span></h1>
+
+  <div class="col-md-11 bg-white mx-auto pb-3 mb-5 rounded shadow main">
+    <div class="row mb-4 pb-3 pt-4 shadow-bottom" style="background: #FFF9F9">
+      <div class="pl-4" w=27>
+        <p class="lesson-hwtype">Uy vazifasi turi: <br><span class="value"></span></p>
+      </div>
+      <div class="pl-4" w=36>
+        <p class="lesson-date">Dars o'tilgan sana: <br><span class="value"></span></p>
+      </div>
+      <div class="pl-4" w=36>
+        <p class="lesson-deadline">Vazifa topshirish tugaydi: <br><span class="value"></span></p>
+      </div>
+
+      <div class="pl-4 pt-3 border-top" w=27>
+        <p class="lesson-media">
+          <a target="_blank" class="value">Media fayl<svg class="bi" width="20" height="20" fill="currentColor">
+            <use xlink:href="/assets/icons/bootstrap-icons.svg#link-45deg"/>
+          </svg></a>
+        </p>
+      </div>
+      <div class="pl-4 pt-3 border-top" w=36>
+        <p class="lesson-description">Tavsif: <br> <span class="value line-break"></span></p>
+      </div>
+      <div class="pl-4 pt-3 border-top" w=36>
+        <p class="lesson-hwdescription">Uy vazifasiga tavsif: <br> <span class="value line-break"></span></p>
+      </div>
+    </div>
+    <div class="value text-center pt-4 pb-3">Uy vazifalar <br>
+      <button class="btn btn-outline-success mt-3 px-4" data-toggle="tooltip" title="O'zgartirilgan baholarni saqlash" onclick="editScores()">Saqlash</button>
+      <p class="my-2 font-weight-500 text-danger score-validation-error"></p>
+    </div>
+    <div class="homeworks">
+      <div class="table shadow-none">
+        <div class="tr">
+          <div class="th text-center" w=5>#</div>
+          <div class="th" w=19>O'quvchi</div>
+          <div class="th" w=42>Vazifa</div>
+          <div class="th" w=27>Uy ishi holati</div>
+          <div class="th" w=7>Baho</div>
+        </div>
+    </div>
+  </div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/lib-quill/quill.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

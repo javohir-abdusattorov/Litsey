@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">Foydalanuvchi <span class="text-primary" style="cursor: pointer;"></span></h1>
+
+  <div class="col-md-6 bg-white mx-auto shadow rounded">
+    <form class="settings-form pb-3 mb-4">
+      <div class="text-center pt-3">
+        <img src="/assets/image/default_user_image.png" class="rounded-circle shadow user-image" width=100 height="100">
+      </div>
+      <div class="shadow-bottom pb-2">
+        <div class="custom-file col-md-8 d-block my-2 mx-auto">
+          <input type="file" class="custom-file-input" id="user-image" accept="image/*">
+          <label class="custom-file-label" for="user-image">Rasm yuklang</label>
+        </div>
+      </div>
+      <div class="form-group pb-2 pt-4 px-3">
+        <label for="full-name">To'liq ism:</label>
+        <input type="text" class="form-control" maxlength="30" id="full-name" required placeholder="To'liq ismingizni kiriting">
+      </div>
+      <div class="form-group py-2 px-3">
+        <label for="old-password">Agar parolni ozgartirmoqchi bo'lsangiz, eski parolni kiriting:</label>
+        <input type="password" class="form-control" maxlength="30" id="old-password" autocomplete="new-password">
+      </div>
+      <div class="form-group py-2 px-3">
+        <label for="new-password">Yangi parolni kiriting:</label>
+        <input type="password" class="form-control" maxlength="30" id="new-password" autocomplete="new-password">
+      </div>
+      <p class="text-danger my-2 text-center font-weight-bold validation-error"></p>
+      <p class="text-warning my-2 text-center font-weight-bold warnings"></p>
+      <div class="text-center"><button class="btn btn-primary" type="submit">Saqlash</button></div>
+    </form>
+  </div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">Bugungi davomat <span class="text-primary" style="cursor: pointer;"></span></h1>
+
+  <div class="col-md-10 bg-white mx-auto shadow rounded">
+    <form class="settings-form pb-3 mb-4">
+      <p class="value mb-3 pt-3 text-center">O'quvchilar</p>
+      <div class="students row pt-2 px-4">
+      </div>
+      <div class="text-center border mx-3 rounded shadow-sm mb-5 mx-auto" w=50>
+        <button class="btn outline-none" type="button" onclick="addStudentAttendance($(this))">
+          <svg class="bi" width="25" height="25" fill="currentColor">
+            <use xlink:href="/assets/icons/bootstrap-icons.svg#plus-circle"/>
+          </svg>
+        </button>
+      </div>
+      <p class="text-danger my-2 text-center font-weight-bold validation-error"></p>
+      <div class="text-center"><button class="btn btn-primary" type="submit">Saqlash</button></div>
+    </form>
+  </div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+
+@import url("loader/loader.css");
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #7397D0;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background:  #222D3E;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #243E29;
+}
+
+[type="date"] {
+  background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.custom-file-input:lang(en)~.custom-file-label::after {
+  content: "Yuklash";
+}
+body {
+	background: #F4F4F4;
+}
+img {
+  object-fit: cover;
+  overflow: hidden;
+}
+nav .user-account img {
+  width: inherit;
+  height: inherit;
+}
+nav .user-account {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  cursor: pointer;
+}
+nav .user-account:hover {
+  background: #f8f9fa !important;
+  text-decoration: none;
+}
+nav li a {
+  display: block;
+  padding: 8px 20px;
+  transition: 0.4s;
+}
+nav li a.text-light:focus, nav li a.text-light:hover {
+  color: #fff !important;
+}
+nav li a:hover {
+  text-decoration: none;
+}
+nav li.bg-dark a:hover {
+  text-decoration: none;
+  background: #4D565F;
+}
+ul > li, .td, img, h1 span, h2 span {
+  user-select: none;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+h6 {
+  word-break: break-all;
+}
+.line-break {
+  word-break: break-all;
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.non-focused:focus {
+  box-shadow: none !important;
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 16%;
+	height: 100vh;
+	z-index: 2;
+  box-shadow: 7px 0px 10px -1px #A0A0A0;
+}
+.logout-btn {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.shadow-bottom {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 8px 6px -6px #A0A0A0;
+}
+.btn.outline-none:focus {
+  box-shadow: none;
+}
+textarea {
+  min-height: 86px;
+  max-height: 172px;
+}
+textarea.height-auto {
+  min-height: 43px;
+  max-height: 86px;
+}
+.table {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.35)
+}
+.tr {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tr.scores {
+  flex-wrap: nowrap;
+}
+.overflow-x {
+  overflow-x: auto;
+}
+.overflow-y {
+  overflow-y: auto;
+}
+.th, .td {
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  padding: .5rem
+}
+.table-border {
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+}
+.th {
+  font-weight: 600;
+  background: #EDEDED;
+}
+.score {
+  width: 35px;
+  min-width: 35px;
+  min-height: 40px;
+  max-height: 41px;
+  border: 1px solid white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.scores {
+  height: 41px;
+}
+.value {
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  user-select: none;
+}
+.value:hover {
+  text-decoration: underline;
+}
+.d-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tr-striped {
+  transition: .4s;
+}
+.tr-striped:hover {
+  background: #F9F9F9;
+}

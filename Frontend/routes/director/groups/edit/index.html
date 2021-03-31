@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">Guruh <span class="text-primary" style="cursor: pointer;"></span></h1>
+
+  <div class="col-md-11 mx-auto bg-white rounded shadow p-3 pt-4 mb-5">
+    <form>
+      <div class="form-group col-md-11 mx-auto d-flex pl-1 pb-2 shadow-bottom">
+        <label for="group-name" class="col-sm-1 col-form-label">Nomi:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" maxlength="30" id="group-name" required placeholder="Guruh nomini kiriting">
+        </div>
+      </div>
+      <div class="leader col-md-11 mx-auto pl-1 pb-2 shadow-bottom">
+        <p class="value mb-2 pt-3">Guruh kuratori</p>
+        <div class="form-group row pr-4 pl-2">
+          <label class="col col-form-label" for="leader-fullName">To`liq ismi</label>
+          <div style="width: 87%;">
+            <input required type="text" class="form-control" id="leader-fullName" placeholder="To`liq ismini kiriting">
+          </div>
+        </div>
+        <div class="form-group row pr-4 pl-2">
+          <label class="col col-form-label" for="leader-name">Login</label>
+          <div style="width: 87%;">
+            <input required type="text" class="form-control" id="leader-name" placeholder="Loginni kiriting">
+          </div>
+        </div>
+        <div class="form-group row pr-4 pl-2">
+          <label class="col col-form-label" for="leader-password">Parol</label>
+          <div style="width: 87%;">
+            <input required type="password" class="form-control" id="leader-password" placeholder="Parolni kiriting">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-11 mx-auto my-4 pl-1 pb-2">
+        <p class="value mb-3 pt-3">Dars jadvali</p>
+        <div class="d-flex justify-content-between lessons-schedule" style="flex-wrap: wrap"></div>
+      </div>
+      <p class="text-danger my-2 ml-5 font-weight-bold validation-error"></p>
+      <div class="text-center"><button class="btn btn-primary" type="submit">Saqlash</button></div>
+    </form>
+  </div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
+
+<!-- 
+  { name: "name", type: "string" },
+  { name: "lessonsSchedule", type: "array" }, [{
+    type, subject: id, teacher: id,
+  }, {
+    type, subjects: [id], teachers: [id] 
+  }, {
+    type, subjects: [id], teachers: [id]
+  }]
+  { name: "leader", type: "object" }, { fullName, name, password }
+ -->

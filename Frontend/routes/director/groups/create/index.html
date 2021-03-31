@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">Yangi guruh</h1>
+
+  <div class="col-md-11 mx-auto bg-white rounded shadow p-3 pt-4 mb-5">
+    <form>
+      <div class="mx-auto shadow-bottom pl-1 px-3 pb-2">
+        <div class="form-group d-flex">
+          <label for="group-name" class="col-form-label" w=15>Nomi:</label>
+          <div class="" w=80>
+            <input type="text" class="form-control" maxlength="30" id="group-name" required placeholder="Guruh nomini kiriting">
+          </div>
+        </div>
+        <div class="form-group d-flex">
+          <label for="group-course" class="col-form-label" w=15>Kurs:</label>
+          <div class="" w=80>
+            <select class="form-control" id="group-course">
+              <option value="1">1-kurs</option>
+              <option value="2">2-kurs</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group d-flex">
+          <label for="group-faculty" class="col-form-label" w=20>Ta'lim yo'nalishi:</label>
+          <div class="" w=75>
+            <select class="form-control" id="group-faculty">
+              <option value="Aniq fanlar">Aniq fanlar</option>
+              <option value="Filologiya fanlar">Filologiya fanlar</option>
+              <option value="Ijtimoiy fanlar">Ijtimoiy fanlar</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group d-flex">
+          <label for="group-educationlang" class="col-form-label" w=20>Ta'lim tili:</label>
+          <div class="" w=75>
+            <select class="form-control" id="group-educationlang">
+              <option value="uz">O'zbek</option>
+              <option value="en">Ingliz</option>
+              <option value="ru">Rus</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="leader mx-auto pb-2 pt-3 px-3 shadow-bottom">
+        <p class="value mb-2 pt-3">Guruh kuratori</p>
+        <div class="form-group row pr-4 pl-2">
+          <label class="col col-form-label" for="leader-fullName">To`liq ismi</label>
+          <div w=87>
+            <input required type="text" class="form-control" id="leader-fullName" placeholder="To`liq ismini kiriting">
+          </div>
+        </div>
+        <div class="form-group row pr-4 pl-2">
+          <label class="col col-form-label" for="leader-name">Login</label>
+          <div w=87>
+            <input required type="text" class="form-control" id="leader-name" placeholder="Loginni kiriting">
+          </div>
+        </div>
+        <div class="form-group row pr-4 pl-2">
+          <label class="col col-form-label" for="leader-password">Parol</label>
+          <div w=87>
+            <input required type="password" class="form-control" id="leader-password" autocomplete="new-password" placeholder="Parolni kiriting">
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto my-4 px-3 pb-2">
+        <p class="value mb-3 pt-3">Dars jadvali</p>
+        <div class="d-flex justify-content-between lessons-schedule" style="flex-wrap: wrap"></div>
+      </div>
+      <p class="text-danger my-2 text-center font-weight-bold validation-error"></p>
+      <div class="text-center"><button class="btn btn-primary" type="submit">Guruh yaratish</button></div>
+    </form>
+  </div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Litsey | Kirish</title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="col-md-8 card px-0 mx-auto my-5 shadow">
+	  <div class="card-header">
+	    <h1 class="text-white mb-0 mt-2 header-text">Kirish</h1>
+		</div>
+		<form class="col-md-6 mt-4 pl-4 login-form">
+		  <div class="form-group">
+		    <label for="login" class="fw600">Login</label>
+		    <input type="text" class="form-control form-control-lg" id="login" required placeholder="Loginingizni kiriting">
+		  </div>
+		  <div class="form-group mt-4">
+		    <label for="password" class="fw600">Parol</label>
+		    <input type="password" class="form-control form-control-lg" id="password" required placeholder="Parolni kiriting" value ="1234567">
+		  </div>
+		  <p class="text-danger my-2 font-weight-bold validation-error"></p>
+		  <button class="btn text-white px-4 py-2 mt-3 mb-5 submit-btn" type="submit"><b>Tizimga kiring</b></button>
+		</form>
+	</div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

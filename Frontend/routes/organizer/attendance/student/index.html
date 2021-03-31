@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">O'quvchi <span class="text-primary" style="cursor: pointer"></span></h1>
+
+  <div class="filters-container col-md-9 px-0 mx-auto mt-3 mb-5">
+    <form class="filter-form">
+      <div class="d-flex align-items-end">
+        <div class="form-group mb-0 pr-3" w=30>
+          <label for="start-date">Boshlanish sanasi</label>
+          <input type="date" class="form-control form-control-sm shadow-sm" id="start-date">
+        </div>
+        <div class="form-group mb-0 pr-3" w=30>
+          <label for="end-date">Tugash sanasi</label>
+          <input type="date" class="form-control form-control-sm shadow-sm" id="end-date">
+        </div>
+        <button class="btn btn-primary ml-auto" type="submit">Filter</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-9 mx-auto bg-white rounded shadow py-3 px-4 mb-5">
+    <div class="statistics shadow-bottom px-2 mb-5 pb-4">
+      <p class="value text-center mb-2">Umumiy statistika</p>
+      <div class="tr justify-content-between">
+        <div class="tr border-bottom-0 border-top border-left" w=48>
+          <div class="td" w=70>Jami qoldirgan darslar</div>
+          <div class="td text-center font-weight-500" id="total-attendance-num" w=30>48ta</div>
+        </div>
+        <div class="tr border-bottom-0 border-top border-left" w=48>
+          <div class="td" w=70>O'rtacha davomat</div>
+          <div class="td text-center font-weight-500" id="total-attendance-per" w=30>85%</div>
+        </div>
+      </div>
+      <div class="tr justify-content-between">
+        <div class="tr border-bottom-0 border-left" w=48>
+          <div class="td text-success" w=70>Sababli qoldirgan darslar</div>
+          <div class="td text-center font-weight-500" id="hasreason-attendance-num" w=30>48ta</div>
+        </div>
+        <div class="tr border-bottom-0 border-left" w=48>
+          <div class="td text-success" w=70>Sababli ulushi</div>
+          <div class="td text-center font-weight-500" id="hasreason-attendance-per" w=30>85%</div>
+        </div>
+      </div>
+      <div class="tr justify-content-between">
+        <div class="tr border-bottom-0 border-left" w=48>
+          <div class="td text-danger" w=70>Sababsiz qoldirgan darslar</div>
+          <div class="td text-center font-weight-500" id="noreason-attendance-num" w=30>48ta</div>
+        </div>
+        <div class="tr border-bottom-0 border-left" w=48>
+          <div class="td text-danger" w=70>Sababsiz ulushi</div>
+          <div class="td text-center font-weight-500" id="noreason-attendance-per" w=30>85%</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="value text-center mb-2">Qoldirilgan darslar</p>
+    <div class="attendace-container mb-3 shadow"></div>
+  </div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

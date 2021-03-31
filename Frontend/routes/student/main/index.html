@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center"></h1>
+
+  <div class="col-md-10 mx-auto bg-white rounded shadow py-3 px-4 mb-5">
+    <p class="font-weight-500 mb-3 text-center title">Dars javdali va baholar</p>
+    <div class="border-top border-left shadow mb-4 lessons-schedule">
+      <div class="tr">
+        <div class="th text-center" w=6>#</div>
+        <div class="th" w=22>Fan</div>
+        <div class="th" w=26>Ustoz</div>
+        <div class="th" w=30>Online dars</div>
+        <div class="th text-center" w=16>Baho</div>
+      </div>
+    </div>
+    <div class="average-scores py-4">
+      <p class="value mb-3 ml-3 text-center">Fanlar bo'yicha o'rtacha baholar</p>
+      <div class="subjects px-3">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

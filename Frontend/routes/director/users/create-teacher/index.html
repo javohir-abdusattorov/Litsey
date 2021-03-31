@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">Yangi fan o'qituvchisi</h1>
+
+  <div class="col-md-6 mx-auto bg-white rounded shadow p-3 pt-4 mb-5">
+    <form>
+      <div class="form-group row pr-4 pl-2">
+        <label class="col col-form-label" for="fullName">To`liq ismi</label>
+        <div w=80>
+          <input type="text" class="form-control" id="fullName" required placeholder="To`liq ismini kiriting">
+        </div>
+      </div>
+      <div class="form-group row pr-4 pl-2">
+        <label class="col col-form-label" for="subjects">Fan</label>
+        <div w=80 class="subjects-select">
+        </div>
+      </div>
+      <div class="form-group row pr-4 pl-2">
+        <label class="col col-form-label" for="name">Login</label>
+        <div w=80>
+          <input type="text" class="form-control" id="name" required placeholder="Loginni kiriting">
+        </div>
+      </div>
+      <div class="form-group row pr-4 pl-2 pb-4">
+        <label class="col col-form-label" for="password">Parol</label>
+        <div w=80>
+          <input type="password" class="form-control" id="password" required autocomplete="new-password" placeholder="Parolni kiriting">
+        </div>
+      </div>
+      <p class="text-danger my-2 text-center font-weight-bold validation-error"></p>
+      <div class="text-center"><button class="btn btn-primary" type="submit">O'qituvchi qo'shish</button></div>
+    </form>
+  </div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

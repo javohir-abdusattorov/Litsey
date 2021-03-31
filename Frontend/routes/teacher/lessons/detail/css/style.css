@@ -1,0 +1,31 @@
+
+body {
+	margin-left: 220px;
+}
+.lesson {
+	display: flex;
+	align-items: center;
+	border-radius: 7px;
+	overflow: hidden;
+}
+.lesson p:first-of-type {
+	font-family: monospace;
+	font-size: 17px;
+	font-weight: 600;
+}
+.lesson p {
+	flex-grow: 1;
+	margin: 0;
+	padding: 10px 20px;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+.th, .td {
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.table {
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+}

@@ -1,0 +1,31 @@
+
+body {
+	margin-left: 220px;
+}
+.value {
+	font-weight: 500;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+.value:hover {
+	text-decoration: underline;
+}
+.students {
+	height: 290px;
+	overflow-y: auto;
+}
+select {
+	transition: 0.5s !important;
+}
+select:focus {
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}
+.close-btn {
+  position: absolute;
+  top: -2px;
+  right: 5px;
+}
+.close-btn:focus {
+	outline: none;
+	color: red;
+}

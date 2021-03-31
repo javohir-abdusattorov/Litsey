@@ -1,0 +1,7 @@
+
+body {
+	margin-left: 220px;
+}
+.journals-container a:hover {
+	text-decoration: none !important;
+}

@@ -1,0 +1,13 @@
+
+body {
+	margin-left: 220px;
+}
+.students-container a:hover {
+	text-decoration: none !important;
+}
+.form-control {
+	transition: 0.5s !important;
+}
+.form-control:focus {
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}

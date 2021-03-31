@@ -1,0 +1,29 @@
+
+body {
+	margin-left: 220px;
+}
+.value {
+	font-weight: 500;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+.value:hover {
+	text-decoration: underline;
+}
+.students {
+	height: 290px;
+	overflow-y: auto;
+}
+.th, .td {
+	padding-left: 1rem;
+	padding-right: 1.25rem;
+	border-top: 1px solid #dee2e6;
+	border-left: 1px solid #dee2e6;
+}
+.td {
+	flex-grow: 1;
+	word-break: break-word;
+}
+.if-lives-rent {
+	display: none;
+}

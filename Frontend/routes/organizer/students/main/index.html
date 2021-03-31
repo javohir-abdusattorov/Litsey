@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">O'quvchilar</h1>
+
+  <div class="filters-container col-md-12 pr-4 pl-3 mx-auto mb-5">
+    <form class="filter-form">
+      <div class="d-flex align-items-end">
+        <div class="form-group mb-0 px-3" w=16>
+          <label for="filter-groups">Guruh</label>
+          <select class="form-control text-dark px-3 mr-3" id="filter-groups">
+          </select>
+        </div>
+        <div class="form-group mb-0 px-3" w=14>
+          <label for="filter-course">Kurs</label>
+          <select class="form-control text-dark px-3 mr-3" id="filter-course">
+            <option value="all">Hammasi</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+        <div class="form-group mb-0 px-3" w=14>
+          <label for="filter-subgroup">Kichik guruh</label>
+          <select class="form-control text-dark px-3" id="filter-subgroup">
+            <option value="all">Hammasi</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+        <input type="search" class="form-control px-3 ml-auto text-dark" id="student-search" maxlength="30" placeholder="O'quvchi ismini kiriting" w=25>
+        <button class="btn btn-primary ml-3" type="submit">Filter</button>
+      </div>
+      <div class="value text-center mt-4" onclick='$("#extra-options").toggle(400)'>Qo'shimcha</div>
+      <div class="row px-3 mx-3 mt-3 pt-4 rounded shadow" id="extra-options" style="background: #FFEAEB; display: none">
+        <div class="form-group mr-1 pb-2 px-3" w=32>
+          <label for="faculty">Ta'lim yo'nalishi</label>
+          <select class="form-control bold-border faculty-select" id="faculty"></select>
+        </div>
+        <div class="form-group mr-1 pb-2 px-3" w=32>
+          <label for="education-lang">Ta'lim tili</label>
+          <select class="form-control bold-border" id="education-lang">
+            <option value="uz">O'zbek</option>
+            <option value="en">Ingliz</option>
+            <option value="ru">Rus</option>
+          </select>
+        </div>
+        <div class="form-group mr-1 pb-2 px-3" w=32>
+          <label for="address-region">Hudud</label>
+          <select class="form-control bold-border region-select" id="address-region"></select>
+        </div>
+        <div class="form-group mr-1 pb-2 px-3" w=32>
+          <label for="patronymic">Otasi ismi</label>
+          <input type="text" class="form-control bold-border" id="patronymic" placeholder="Otasi ismni kiriting">
+        </div>
+        <div class="form-group mr-1 pb-2 pt-2 px-3" w=32>
+          <label for="phone-number">Telefon nomer</label>
+          <input type="number" maxlength="9" class="form-control bold-border" id="phone-number" placeholder="Telefon nomerni kiriting">
+        </div>
+        <div class="form-group mr-1 pb-2 pt-2 px-3" w=32>
+          <label for="where-lives">Hozir qayerda yashamoqda</label>
+          <select class="form-control bold-border" id="where-lives">
+            <option value="all">Hammasi</option>
+            <option value="Oʻz uyida">Oʻz uyida</option>
+            <option value="Yotoqxona">Yotoqxona</option>
+            <option value="Ijarada">Ijarada</option>
+          </select>
+        </div>
+        <div class="form-group mr-1 pb-2 pt-2 px-3" w=32>
+          <label for="identity-series">Shaxs bildiruvchi hujjat seriyasi</label>
+          <input type="text" class="form-control bold-border" id="identity-series" placeholder="Seriya raqamini kiriting">
+        </div>
+        <div class="form-group mr-1 pb-2 pt-2 px-3" w=32>
+          <label for="identity-numbers">Hujjat raqami</label>
+          <input type="text" class="form-control bold-border" id="identity-numbers" placeholder="Hujjat raqamini kiriting">
+        </div>
+
+        <div class="d-flex" w=100>
+          <div class="form-group pb-2 pt-2 px-3" w=25>
+            <label for="father-surname">Otasi familyasi</label>
+            <input type="text" class="form-control bold-border" id="father-surname" placeholder="Otasining familyasini kiriting">
+          </div>
+          <div class="form-group pb-2 pt-2 px-3" w=25>
+            <label for="father-name">Otasi ismi</label>
+            <input type="text" class="form-control bold-border" id="father-name" placeholder="Otasining ismini kiriting">
+          </div>
+          <div class="form-group pb-2 pt-2 px-3" w=25>
+            <label for="father-workplace">Otasi ish joyi</label>
+            <input type="text" class="form-control bold-border" id="father-workplace" placeholder="Otasining ish joyini kiriting">
+          </div>
+          <div class="form-group pb-2 pt-2 px-3" w=25>
+            <label for="father-phone-number">Otasi telefon raqami</label>
+            <input type="number" maxlength="9" class="form-control bold-border" id="father-phone-number" placeholder="Otasining telefon raqamini kiriting">
+          </div>
+        </div>
+        <div class="d-flex" w=100>
+          <div class="form-group pb-2 pt-2 px-3" w=25>
+            <label for="mother-surname">Onasi familyasi</label>
+            <input type="text" class="form-control bold-border" id="mother-surname" placeholder="Onasining familyasini kiriting">
+          </div>
+          <div class="form-group pb-2 pt-2 px-3" w=25>
+            <label for="mother-name">Onasi ismi</label>
+            <input type="text" class="form-control bold-border" id="mother-name" placeholder="Onasining ismini kiriting">
+          </div>
+          <div class="form-group pb-2 pt-2 px-3" w=25>
+            <label for="mother-workplace">Onasi ish joyi</label>
+            <input type="text" class="form-control bold-border" id="mother-workplace" placeholder="Onasining ish joyini kiriting">
+          </div>
+          <div class="form-group pb-2 pt-2 px-3" w=25>
+            <label for="mother-phone-number">Onasi telefon raqami</label>
+            <input type="number" maxlength="9" class="form-control bold-border" id="mother-phone-number" placeholder="Onasining telefon raqamini kiriting">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="text-right pr-3 pb-4"><button onclick="exportToExel()" class="btn btn-outline-success mr-2 export-to-exel-btn" style="display: none;">Exelga export</button></div>
+  <ul class="list-group px-4 pb-4 students-container"></ul>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+  <a id="_redirecturl" target="_blank"></a>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

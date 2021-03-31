@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="icon" type="image/png" href="/assets/image/logo.png" sizes="57x57">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/lib-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/utils/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="sidebar-placeholder"></div>
+
+  <h1 class="font-weight-light mt-4 mb-4 text-center">Yangi dars</h1>
+
+  <div class="col-md-11 mx-auto bg-white rounded shadow px-3 pb-3 pt-0 mb-5">
+    <form>
+      <div class="row mb-4 pb-3 pt-4 shadow-bottom" style="background: #FFF9F9">
+        <div class="px-3" w=35>
+          <div class="form-group">
+            <label for="group">Guruh</label>
+            <select class="form-control" onchange="chaneDates($(this))" id="group" required><option disabled selected>Tanlang</option></select>
+          </div>
+        </div>
+        <div class="px-3" w=30>
+          <div class="form-group">
+            <label for="date">Sana</label>
+            <select class="form-control" onchange="changeLesson($(this))" id="date" required><option disabled selected>Guruh tanlang</option></select>
+          </div>
+        </div>
+        <div class="px-3" w=35>
+          <div class="form-group">
+            <label for="lesson">Dars</label>
+            <select class="form-control" id="lesson" required><option disabled selected>Sana tanlang</option></select>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4 pt-2 justify-content-between">
+        <div class="px-3 pl-4" w=48>
+          <p class="mb-1">Dars uchun media fayl</p>
+          <div class="custom-file mb-4">
+            <input type="file" class="custom-file-input d-block" id="media" accept="image/*">
+            <label class="custom-file-label" for="media">Dars uchun media fayl</label>
+          </div>
+          <div class="form-group pt-2">
+            <label for="description" class="mb-1">Dars uchun izoh</label>
+            <textarea class="form-control" id="description" rows="3" required></textarea>
+          </div>
+        </div>
+        <div class="px-3" w=48>
+          <div class="form-group">
+            <label for="homework-type">Uy vazifasi turi</label>
+            <select class="form-control" id="homework-type" required>
+            </select>
+          </div>
+          <div class="form-group pt-2">
+            <label for="homework-description" class="mb-1">Uy vazifasi uchun izoh</label>
+            <textarea class="form-control" id="homework-description" rows="3" required></textarea>
+          </div>
+        </div>
+      </div>
+      <p class="text-danger my-2 text-center font-weight-bold validation-error"></p>
+      <div class="text-center"><button class="btn btn-primary" type="submit">Darsni saqlash</button></div>
+    </form>
+  </div>
+
+  <div class="modal loading-modal" tabindex="-1" role="dialog">
+    <div id="loader"></div>
+  </div>
+
+<script src="/assets/lib-jquery/jquery.min.js" defer></script>
+<script src="/assets/lib-popper/popper.min.js" defer></script>
+<script src="/assets/lib-bootstrap/bootstrap.min.js" defer></script>
+<script src="/assets/utils/helpers.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
